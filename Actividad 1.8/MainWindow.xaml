@@ -1,0 +1,52 @@
+﻿<Window x:Class="Actividad_1._6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Actividad_1._6"
+        mc:Ignorable="d"
+        Title="Registro de Hábitos" Height="450" Width="800" 
+         KeyDown="Window_KeyDown">
+    <Grid Margin="10">
+        
+        <!--Declaro las filas-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <!--Fila 1: Formulario de datos-->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+            <!--TextBlock y campo para meter el nombre-->
+            <TextBlock Text="Nombre: " VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox x:Name="txtNombre" Width="150" Margin="0,0,10,0"/>
+            <!--TextBlock y campo DatePicker para meter la fecha-->
+            <TextBlock Text="Fecha: " VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <DatePicker x:Name="selFecha" Width="130" Margin="0,0,10,0"/>
+            <!--TextBlock y campo de texto para la cantidad-->
+            <TextBlock Text="Cantidad: " VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox x:Name="txtCantidad" Width="60" Margin="0,0,10,0"/>
+            <!--Botón de insertar-->
+            <Button x:Name="btnInsertar" Content="Insertar" Click="BtnInsertar_Click" Padding="10,2"/>
+        </StackPanel>
+        
+        <!--Fila 2: Acciones sobre un hábito-->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,10">
+            <!--Boton para ver todos los hábitos registrados-->    
+            <Button x:Name="btnVerTodos" Content="Ver todos" Click="BtnVerTodos_Click" Padding="10,2" Margin="0,0,15,0"/>
+            <!--Campo para meter el ID-->
+            <TextBlock Text="ID: " VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox x:Name="txtId" Width="60" Margin="5,0,10,0"/>
+            <!--Botón borrar-->
+            <Button x:Name="btnBorrar" Content="Borrar" Click="btnBorrar_click" Padding="10, 2" Margin="0,0,10,0"/>
+            <!--Boton actualizar-->
+            <Button x:Name="btnActualizar" Content="Actualizar" Click="BtnActualizar_Click" Padding="10,2"/>
+        </StackPanel>
+
+        <!--Fila 3 para mostrar todos los habitos-->
+        <DataGrid Grid.Row="2" x:Name="tablaHabitos" AutoGenerateColumns="True" IsReadOnly="True"
+                  MouseDoubleClick="tablaHabitos_MouseDoubleClick"/>
+
+    </Grid>
+</Window>

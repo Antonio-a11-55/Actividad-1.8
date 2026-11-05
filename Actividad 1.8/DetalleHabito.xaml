@@ -1,0 +1,56 @@
+<Window x:Class="Actividad_1._6.DetalleHabito"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Detalle del hábito"
+        Height="300" Width="420"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner"
+        KeyDown="Window_KeyDown">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- ID -->
+        <TextBlock Text="ID:" Grid.Row="0" Grid.Column="0"
+                   VerticalAlignment="Center" FontWeight="Bold"
+                   Margin="0,0,10,10"/>
+        <TextBox x:Name="txtId" Grid.Row="0" Grid.Column="1"
+                 IsReadOnly="True" Margin="0,0,0,10"/>
+
+        <!-- Nombre -->
+        <TextBlock Text="Nombre:" Grid.Row="1" Grid.Column="0"
+                   VerticalAlignment="Center" FontWeight="Bold"
+                   Margin="0,0,10,10"/>
+        <TextBox x:Name="txtNombre" Grid.Row="1" Grid.Column="1"
+                 IsReadOnly="True" Margin="0,0,0,10"/>
+
+        <!-- Fecha -->
+        <TextBlock Text="Fecha:" Grid.Row="2" Grid.Column="0"
+                   VerticalAlignment="Center" FontWeight="Bold"
+                   Margin="0,0,10,10"/>
+        <TextBox x:Name="txtFecha" Grid.Row="2" Grid.Column="1"
+                 IsReadOnly="True" Margin="0,0,0,10"/>
+
+        <!-- Cantidad -->
+        <TextBlock Text="Cantidad:" Grid.Row="3" Grid.Column="0"
+                   VerticalAlignment="Center" FontWeight="Bold"
+                   Margin="0,0,10,10"/>
+        <TextBox x:Name="txtCantidad" Grid.Row="3" Grid.Column="1"
+                 IsReadOnly="True" Margin="0,0,0,10"/>
+
+        <!-- Botón cerrar (extra: por si no se quiere usar ESC) -->
+        <Button Content="Cerrar (ESC)" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                Padding="20,5" Click="BtnCerrar_Click"/>
+    </Grid>
+</Window>
